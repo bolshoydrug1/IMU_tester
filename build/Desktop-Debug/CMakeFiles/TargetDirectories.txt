@@ -1,0 +1,9 @@
+/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Debug/CMakeFiles/IMU_tester.dir
+/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Debug/CMakeFiles/install.dir
+/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Debug/CMakeFiles/IMU_tester_autogen_timestamp_deps.dir
+/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Debug/CMakeFiles/IMU_tester_autogen.dir

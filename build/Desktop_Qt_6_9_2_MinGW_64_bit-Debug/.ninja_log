@@ -1,0 +1,11 @@
+# ninja log v5
+7	544	8149703427528330	IMU_tester_autogen/timestamp	34e21976a523cded
+7	544	8149703427528330	IMU_tester_autogen/mocs_compilation.cpp	34e21976a523cded
+7	544	8149703427528330	D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/IMU_tester_autogen/timestamp	34e21976a523cded
+7	544	8149703427528330	D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/IMU_tester_autogen/mocs_compilation.cpp	34e21976a523cded
+560	1747	8149703440145825	CMakeFiles/IMU_tester.dir/protocolimu.cpp.obj	b49885079a970221
+563	1975	8149703442439385	CMakeFiles/IMU_tester.dir/frameparser.cpp.obj	d16df6c47c3d633
+553	2488	8149703447550555	CMakeFiles/IMU_tester.dir/main.cpp.obj	6bc23b6b300d4c6a
+549	2652	8149703449206647	CMakeFiles/IMU_tester.dir/IMU_tester_autogen/mocs_compilation.cpp.obj	438b2c2550778eb6
+556	3753	8149703460189577	CMakeFiles/IMU_tester.dir/mainwindow.cpp.obj	5161d2f4765921e0
+3753	4247	8149703465105219	IMU_tester.exe	ed8a1e212fd9b866

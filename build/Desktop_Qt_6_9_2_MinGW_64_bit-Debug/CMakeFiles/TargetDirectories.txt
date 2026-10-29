@@ -1,0 +1,9 @@
+D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/IMU_tester.dir
+D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
+D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/IMU_tester_autogen_timestamp_deps.dir
+D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/IMU_tester_autogen.dir

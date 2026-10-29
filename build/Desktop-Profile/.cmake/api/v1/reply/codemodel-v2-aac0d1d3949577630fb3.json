@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-5b5cfbd92529319011b8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "IMU_tester",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "IMU_tester::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IMU_tester-RelWithDebInfo-1d36cf15b6405eb610d2.json",
+					"name" : "IMU_tester",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "IMU_tester_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IMU_tester_autogen-RelWithDebInfo-b5e500c026dd6715850c.json",
+					"name" : "IMU_tester_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "IMU_tester_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IMU_tester_autogen_timestamp_deps-RelWithDebInfo-aa0c5b65966692dbf4df.json",
+					"name" : "IMU_tester_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/konstantin1/Education/IMU_Qt_tester/IMU_tester/build/Desktop-Profile",
+		"source" : "/home/konstantin1/Education/IMU_Qt_tester/IMU_tester"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

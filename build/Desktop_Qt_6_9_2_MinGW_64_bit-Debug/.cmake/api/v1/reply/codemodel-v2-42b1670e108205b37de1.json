@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-48ec44fe8aa4025c2edc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "IMU_tester",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "IMU_tester::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IMU_tester-Debug-638563efe8ecd9a1a401.json",
+					"name" : "IMU_tester",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "IMU_tester_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IMU_tester_autogen-Debug-1d31ed002a2ce5553329.json",
+					"name" : "IMU_tester_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "IMU_tester_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IMU_tester_autogen_timestamp_deps-Debug-c9e6447464b32d06ec4f.json",
+					"name" : "IMU_tester_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug",
+		"source" : "D:/Education/IMU_tester"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
