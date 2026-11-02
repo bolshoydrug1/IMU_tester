@@ -23,7 +23,8 @@
 			"include",
 			"find_package",
 			"find_dependency",
-			"_qt_internal_find_qt_dependencies"
+			"_qt_internal_find_qt_dependencies",
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -52,7 +53,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 37,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
@@ -76,19 +77,19 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 76,
+				"line" : 89,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 59,
+				"line" : 72,
 				"parent" : 0
 			},
 			{
 				"command" : 8,
 				"file" : 1,
-				"line" : 16,
+				"line" : 18,
 				"parent" : 0
 			},
 			{
@@ -290,6 +291,12 @@
 				"file" : 13,
 				"line" : 83,
 				"parent" : 42
+			},
+			{
+				"command" : 11,
+				"file" : 1,
+				"line" : 70,
+				"parent" : 0
 			}
 		]
 	},
@@ -360,6 +367,10 @@
 					"path" : "D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/IMU_tester_autogen/include"
 				},
 				{
+					"backtrace" : 45,
+					"path" : "D:/Education/IMU_tester/Protocol"
+				},
+				{
 					"backtrace" : 26,
 					"isSystem" : true,
 					"path" : "C:/Qt/6.9.2/mingw_64/include/QtCore"
@@ -408,16 +419,129 @@
 				6,
 				8
 			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu11 -fdiagnostics-color=always"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 26,
+					"define" : "MINGW_HAS_SECURE_API=1"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "QT_NEEDS_QMAIN"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_SERIALPORT_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_WIDGETS_LIB"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "UNICODE"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "WIN32"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "WIN64"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "_ENABLE_EXTENDED_ALIGNED_STORAGE"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "_UNICODE"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "_WIN64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "D:/Education/IMU_tester/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/IMU_tester_autogen/include"
+				},
+				{
+					"backtrace" : 45,
+					"path" : "D:/Education/IMU_tester/Protocol"
+				},
+				{
+					"backtrace" : 26,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.2/mingw_64/include/QtCore"
+				},
+				{
+					"backtrace" : 26,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.2/mingw_64/include"
+				},
+				{
+					"backtrace" : 26,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.2/mingw_64/mkspecs/win32-g++"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.2/mingw_64/include/QtWidgets"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.2/mingw_64/include/QtGui"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.2/mingw_64/include/QtSerialPort"
+				}
+			],
+			"language" : "C",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					4
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				10
+			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "IMU_tester_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "IMU_tester_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "IMU_tester_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "IMU_tester::@6890427a1f51a3e7e1df",
@@ -536,7 +660,8 @@
 				1,
 				2,
 				6,
-				8
+				8,
+				10
 			]
 		},
 		{
@@ -546,7 +671,8 @@
 				3,
 				5,
 				7,
-				9
+				9,
+				11
 			]
 		},
 		{
@@ -560,14 +686,14 @@
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				10
+				12
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				11
+				13
 			]
 		}
 	],
@@ -622,6 +748,17 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "frameparser.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "Protocol/Protocol_IMU.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "Protocol/Protocol_IMU.c",
 			"sourceGroupIndex" : 0
 		},
 		{

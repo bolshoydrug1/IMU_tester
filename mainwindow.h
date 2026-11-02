@@ -35,6 +35,8 @@ private slots:
     void onRequestTelemetry();
     void onReset();
 
+    void on_modeCombo_activated(int index);
+
 private:
     void setConnected(bool connected);
     void appendLog(const QString &text);

@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(IMU_tester VERSION 0.1 LANGUAGES CXX)
+project(IMU_tester VERSION 0.1 LANGUAGES C CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -22,6 +24,14 @@ endif()
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets SerialPort)
 set(QT_VERSION ${Qt${QT_VERSION_MAJOR}_VERSION})
 
+# Единый источник истины по протоколу — исходники из основного проекта,
+# чтобы формат кадров и структур не дублировался в GUI.
+set(PROTOCOL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Protocol)
+set(PROTOCOL_SOURCES
+        ${PROTOCOL_DIR}/Protocol_IMU.h
+        ${PROTOCOL_DIR}/Protocol_IMU.c
+)
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -31,6 +41,7 @@ set(PROJECT_SOURCES
         protocolimu.cpp
         frameparser.h
         frameparser.cpp
+        ${PROTOCOL_SOURCES}
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -55,6 +66,8 @@ else()
         )
     endif()
 endif()
+
+target_include_directories(IMU_tester PRIVATE ${PROTOCOL_DIR})
 
 target_link_libraries(IMU_tester PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::SerialPort)
 

@@ -5,39 +5,51 @@
 #include <QString>
 #include <QtGlobal>
 
-/* Реализация протокола обмена с ИИС (см. Protocol_IMU.h/.c прошивки).
- * Кадр: head(1)=0xAA, type(1), version(1)=0x01, length(2, LE) payload,
+/* Единственный источник истины по формату обмена — Protocol_IMU.h/.c из
+ * основного проекта прошивки (папка Protocol). Здесь только C++-обёртки:
+ * константы и размеры структур берутся напрямую из прошивочного заголовка,
+ * чтобы GUI не расходился с устройством при изменении протокола.
+ * Кадр: head(1)=0xAA, type(1), version(1), length(2, LE) payload,
  * crc16(2, LE, CCITT-FALSE по type+version+length+payload), tail(1)=0x55. */
+extern "C" {
+#include "Protocol_IMU.h"
+}
+
 namespace ImuProtocol {
 
-constexpr quint8 kVersion = 0x01;
-constexpr quint8 kHead = 0xAA;
-constexpr quint8 kTail = 0x55;
-constexpr int kOverheadBytes = 8;
-constexpr quint32 kResetMagic = 0xDEADBEEFu;
+constexpr quint8 kVersion = PROTOCOL_VERSION;
+constexpr quint8 kHead = PROTOCOL_HEAD;
+constexpr quint8 kTail = PROTOCOL_TAIL;
+constexpr int kOverheadBytes = PROTOCOL_OVERHEAD_BYTES;
+constexpr quint32 kResetMagic = PROTOCOL_RESET_MAGIC;
 
 enum FrameType : quint8 {
-    TypeTelemetry  = 0x01,
-    TypeAckNack    = 0x02,
-    TypeTimeSync   = 0x03,
-    TypeCalibAccel = 0x04,
-    TypeCalibGyro  = 0x05,
-    TypeAsciiMsg   = 0x06,
-    TypeModeConfig = 0x07,
-    TypeReset      = 0x08,
+    TypeTelemetry  = PROTOCOL_TYPE_TELEMETRY,
+    TypeAckNack    = PROTOCOL_TYPE_ACK_NACK,
+    TypeTimeSync   = PROTOCOL_TYPE_TIME_SYNC,
+    TypeCalibAccel = PROTOCOL_TYPE_CALIB_ACCEL,
+    TypeCalibGyro  = PROTOCOL_TYPE_CALIB_GYRO,
+    TypeAsciiMsg   = PROTOCOL_TYPE_ASCII_MSG,
+    TypeModeConfig = PROTOCOL_TYPE_MODE_CONFIG,
+    TypeReset      = PROTOCOL_TYPE_RESET,
 };
 
 enum Status : quint8 {
-    StatusOk    = 0x00,
-    StatusError = 0x01,
+    StatusOk    = PROTOCOL_STATUS_OK,
+    StatusError = PROTOCOL_STATUS_ERROR,
+};
+
+enum TelemetryStatus : quint8 {
+    TelemetryStatusOk    = PROTOCOL_TELEMETRY_STATUS_OK,
+    TelemetryStatusError = PROTOCOL_TELEMETRY_STATUS_ERROR,
 };
 
 enum Mode : quint8 {
-    Mode100Hz     = 0x00,
-    Mode250Hz     = 0x01,
-    Mode500Hz     = 0x02,
-    Mode1000Hz    = 0x03,
-    ModeOnRequest = 0x04,
+    Mode100Hz     = PROTOCOL_MODE_100HZ,
+    Mode250Hz     = PROTOCOL_MODE_250HZ,
+    Mode500Hz     = PROTOCOL_MODE_500HZ,
+    Mode1000Hz    = PROTOCOL_MODE_1000HZ,
+    ModeOnRequest = PROTOCOL_MODE_ON_REQUEST,
 };
 
 struct TelemetryData {
@@ -45,8 +57,10 @@ struct TelemetryData {
     float gyroXDps = 0, gyroYDps = 0, gyroZDps = 0;
     float accelXG = 0, accelYG = 0, accelZG = 0;
     float rollDeg = 0, pitchDeg = 0, yawDeg = 0;
+    float temperatureC = 0;
+    quint8 status = TelemetryStatusOk;
 
-    static constexpr int kPayloadSize = 44;
+    static constexpr int kPayloadSize = sizeof(Protocol_TelemetryData_t);
     static bool fromPayload(const QByteArray &payload, TelemetryData *out);
 };
 
@@ -54,14 +68,14 @@ struct AckNack {
     quint8 ackType = 0;
     quint8 status = 0;
 
-    static constexpr int kPayloadSize = 2;
+    static constexpr int kPayloadSize = sizeof(Protocol_AckNack_t);
     static bool fromPayload(const QByteArray &payload, AckNack *out);
 };
 
 struct TimeSyncResponse {
     quint64 deviceTickMs = 0;
 
-    static constexpr int kPayloadSize = 8;
+    static constexpr int kPayloadSize = sizeof(Protocol_TimeSyncResponse_t);
     static bool fromPayload(const QByteArray &payload, TimeSyncResponse *out);
 };
 
@@ -69,7 +83,7 @@ struct CalibResponse {
     quint8 status = 0;
     float biasX = 0, biasY = 0, biasZ = 0;
 
-    static constexpr int kPayloadSize = 13;
+    static constexpr int kPayloadSize = sizeof(Protocol_CalibResponse_t);
     static bool fromPayload(const QByteArray &payload, CalibResponse *out);
 };
 
@@ -81,6 +95,7 @@ QByteArray buildModeConfig(quint8 mode);
 QByteArray buildResetRequest();
 
 QString typeName(quint8 type);
+QString telemetryStatusName(quint8 status);
 
 } // namespace ImuProtocol
 

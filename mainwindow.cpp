@@ -170,7 +170,14 @@ void MainWindow::updateTelemetry(const ImuProtocol::TelemetryData &t)
     ui->rollValue->setText(QString::number(t.rollDeg, 'f', 2));
     ui->pitchValue->setText(QString::number(t.pitchDeg, 'f', 2));
     ui->yawValue->setText(QString::number(t.yawDeg, 'f', 2));
+    ui->temperatureValue->setText(QString::number(t.temperatureC, 'f', 2));
     ui->timestampValue->setText(QString::number(t.timestampMs));
+
+    ui->telemetryStatusValue->setText(ImuProtocol::telemetryStatusName(t.status));
+    ui->telemetryStatusValue->setStyleSheet(
+        t.status == ImuProtocol::TelemetryStatusOk
+            ? QStringLiteral("font-family: monospace; font-weight: bold; color: #2a2;")
+            : QStringLiteral("font-family: monospace; font-weight: bold; color: #a33;"));
 }
 
 void MainWindow::onFrameReady(quint8 type, const QByteArray &payload)
@@ -297,3 +304,9 @@ void MainWindow::onReset()
 
     sendFrame(ImuProtocol::buildResetRequest(), QStringLiteral("Команда перезагрузки устройства"));
 }
+
+void MainWindow::on_modeCombo_activated(int index)
+{
+
+}
+
